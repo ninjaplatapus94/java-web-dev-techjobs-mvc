@@ -19,31 +19,37 @@
                 </tr>
             </table>
 
-            <table th:each="job : jobs"all jobs>
-<!--                <th:block >-->
-                    <tr  th:each="item : ${job}"job>
-                        <td th:each="category : ${item}" category >
-                            <p th:each = "field : ${category}" th:text = "${field}"id printdata></p>
-                        </td>
+            <table class="job-listing" th:each="job : ${jobs}" all jobs>
+                <th:block th:each="item : ${job}" job>
+                    <tr  th:each="category : ${item}" category>
+                        <td  th:each = "field : ${category}" th:text = "${field.id}" id></td>
                     </tr>
-<!--                    <tr th:each="category : ${item}" category>-->
-<!--                        <td th:each = "field : ${category}" th:text = "${field}"id print name></td>-->
-<!--                    </tr>-->
-<!--                   <tr th:each="category : ${item}" category>-->
-<!--                        <td th:each = "field : ${category}" th:text = "${field}"employer></td>-->
-<!--                   </tr>-->
-<!--                    <tr th:each="category : ${item}" category>-->
-<!--                        <td th:each = "field : ${category}" th:text = "${field}"location></td>-->
-<!--                    </tr>-->
-<!--                    <tr th:each="category : ${item}" category>-->
-<!--                        <td th:each="field : ${category}" th:text = "${field}" position type></td>-->
-<!--                    </tr>-->
-<!--                    <tr th:each="category : ${item}" category>-->
-<!--                        <td th:each = "field : ${category}" th:text = "${field}" core competency></td>-->
-<!--                    </tr>-->
-<!--                </th:block>-->
+                    <tr th:each="category : ${item}" category>
+                        <td th:each = "field : ${category}" th:text = "${field.name}" name></td>
+                    </tr>
+                   <tr th:each="category : ${item}" category>
+                        <td th:each = "field : ${category}" th:text = "${field.employer}"employer></td>
+                   </tr>
+                    <tr th:each="category : ${item}" category>
+                        <td th:each = "field : ${category}" th:text = "${field.location}"location></td>
+                    </tr>
+                    <tr th:each="category : ${item}" category>
+                        <td th:each="field : ${category}"  :text = "${field.positionType}"position type></td>
+                    </tr>
+                    <tr th:each="category : ${item}" category>
+                        <td th:each = "field : ${category}" th:text = "${field.coreCompetency}" core competency></td>
+                    </tr>
+                </th:block>
             </table>
-
+        <!--                    <tr>-->
+        <!--                        <td th:each="job : ${jobs}">-->
+        <!--                            <ul th:each="field : ${job}">-->
+        <!--                                <li  th:each="data : ${field})}">-->
+        <!--                                    <p th:text="data"></p>-->
+        <!--                                </li>-->
+        <!--                            </ul>-->
+        <!--                        </td>-->
+        <!--                    </tr>-->
 <!--        <th:block th:each="job : jobs"alljobs>-->
 <!--            <table th:each="item : ${job}"job>-->
 <!--                <tr  th:each="category : ${item}" category>-->
