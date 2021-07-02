@@ -7,7 +7,9 @@
         <div th:replace="fragments :: page-header"></div>
 
         <div class="container body-content">
+
             <h1 th:text="${#strings.capitalizeWords(title)}"></h1>
+
             <h2 class = "centered">View Jobs By Category</h2>
         </div>
 
@@ -18,11 +20,9 @@
                 </th:block>
             </tr>
             <tr>
-                <!-- TODO #2: Complete the View Jobs By Category Table. -->
 
                 <td>
                         <a th:href="@{/list/jobs(column=${columns.all},value=${All})}" th:text="${columns.all}"></a>
-
                 </td>
 
                 <td th:each="category : ${tableChoices}">

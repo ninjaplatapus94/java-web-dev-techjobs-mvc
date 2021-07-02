@@ -10,84 +10,14 @@
             <h1 th:text="${#strings.capitalizeWords(title)}"></h1>
         <!-- TODO #1 - Use a loop to display job results in a table. -->
         </div>
-
-            <table class="job-listing">
-                <tr>
-                    <th:block th:each="column : ${columns}">
-                        <th th:text = "${column.value}"></th>
-                    </th:block>
-                </tr>
-            </table>
-
-            <table class="job-listing" th:each="job : ${jobs}" all jobs>
-                <th:block th:each="item : ${job}" job>
-                    <tr  th:each="category : ${item}" category>
-                        <td  th:each = "field : ${category}" th:text = "${field.id}" id></td>
-                    </tr>
-                    <tr th:each="category : ${item}" category>
-                        <td th:each = "field : ${category}" th:text = "${field.name}" name></td>
-                    </tr>
-                   <tr th:each="category : ${item}" category>
-                        <td th:each = "field : ${category}" th:text = "${field.employer}"employer></td>
-                   </tr>
-                    <tr th:each="category : ${item}" category>
-                        <td th:each = "field : ${category}" th:text = "${field.location}"location></td>
-                    </tr>
-                    <tr th:each="category : ${item}" category>
-                        <td th:each="field : ${category}"  :text = "${field.positionType}"position type></td>
-                    </tr>
-                    <tr th:each="category : ${item}" category>
-                        <td th:each = "field : ${category}" th:text = "${field.coreCompetency}" core competency></td>
-                    </tr>
+        <table class="job-listing">
+            <tr>
+                <th:block th:each="column : ${columns}">
+                    <th th:text = "${column.value}"></th>
                 </th:block>
-            </table>
-        <!--                    <tr>-->
-        <!--                        <td th:each="job : ${jobs}">-->
-        <!--                            <ul th:each="field : ${job}">-->
-        <!--                                <li  th:each="data : ${field})}">-->
-        <!--                                    <p th:text="data"></p>-->
-        <!--                                </li>-->
-        <!--                            </ul>-->
-        <!--                        </td>-->
-        <!--                    </tr>-->
-<!--        <th:block th:each="job : jobs"alljobs>-->
-<!--            <table th:each="item : ${job}"job>-->
-<!--                <tr  th:each="category : ${item}" category>-->
-<!--                    <td  th:each = "field : ${category}" data>-->
-<!--                        <p th:text = "${field}"></p>-->
-<!--                    </td>-->
-<!--                <tr>-->
-<!--                    <td th:each = "field : ${category}" th:text = "${field.name}">name</td>-->
-<!--                </tr>-->
-<!--                <td th:each = "field : ${category}" th:text = "${field.employer}">employer</td>-->
-<!--                <td th:each = "field : ${category}" th:text = "${field.location}">\n</td>-->
-<!--                <tr>-->
-<!--                    <td th:each="field : ${category}" th:text = "${field.positionType}" ></td>-->
-<!--                </tr>-->
-<!--                <td th:each = "field : ${category}" th:text = "${field.coreCompetency}" ></td>-->
-<!--                </tr>-->
-<!--            </table>-->
-<!--        </th:block>-->
-<!--&lt;!&ndash;        <table>&ndash;&gt;-->
-<!--            <th></th>-->
-<!--            <tr>-->
-<!--                <th:block th:each="column : ${columns}">-->
-<!--                    <th th:text = "${column.value}"></th>-->
-<!--                </th:block>-->
-<!--            </tr>-->
-<!--            <tr th:each="category : ${tableChoices}">-->
-
-
-
-<!--                <td th:each="item : ${category.value}">-->
-<!--                        <ul th:if  ="${}">-->
-<!--                            <a th:text="${item}">heading</a>-->
-<!--                        </ul>-->
-
-
-<!--                </td>-->
-<!--            </tr>-->
-<!--        </table>-->
+            </tr>
+        </table>
+        <p th:replace="fragments :: jobTable"></p>
 
     </body>
 </html>
